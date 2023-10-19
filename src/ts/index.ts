@@ -1,7 +1,32 @@
-import { Product } from "./types";
+import { Product, ProductDetails } from "./types";
 import Swal from "sweetalert2";
 
 const serverUrl = "http://localhost:5000/products";
+
+function updateMiniCartCount(): void {
+  const cartData = localStorage.getItem("cart");
+  const cart = cartData ? JSON.parse(cartData) : [];
+
+  const minicartCount = document.querySelector(".minicart__count");
+
+  if (minicartCount) {
+    minicartCount.textContent = cart.length.toString();
+  }
+}
+
+function addToCart(productDetails: ProductDetails): void {
+  const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+  cart.push(productDetails);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateMiniCartCount();
+
+  Swal.fire({
+    icon: "success",
+    title: "Produto Adicionado ao Carrinho",
+    showConfirmButton: true,
+    timer: 3000,
+  });
+}
 
 function renderProduct(
   product: Product,
@@ -30,6 +55,17 @@ function renderProduct(
       product
     )}'>Comprar</button>
   `;
+
+  const buyButton = productItem.querySelector(".buy-button") as HTMLElement;
+
+  function addToCartHandler() {
+    const productDetails = JSON.parse(buyButton.dataset.productDetails);
+    addToCart(productDetails);
+  }
+
+  if (buyButton) {
+    buyButton.addEventListener("click", addToCartHandler);
+  }
 
   productListContainer?.appendChild(productItem);
 }
@@ -80,6 +116,7 @@ function fetchDataAndRenderProducts(): void {
 
 function main() {
   fetchDataAndRenderProducts();
+  updateMiniCartCount();
 }
 
 document.addEventListener("DOMContentLoaded", main);
