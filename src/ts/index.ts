@@ -114,9 +114,48 @@ function fetchDataAndRenderProducts(): void {
     });
 }
 
+function openModal(elementName: string): void {
+  const modal = document.querySelector(elementName) as HTMLElement;
+  modal.classList.toggle("is-open");
+}
+
+function toggleFilter(): void {
+  const toggleFilterButtons = document.querySelectorAll(".js-toggle-filter");
+  toggleFilterButtons.forEach((button) => {
+    button.addEventListener("click", () => openModal(".filter__main"));
+  });
+}
+
+function toggleSort(): void {
+  const toggleFilterButtons = document.querySelectorAll(".js-toggle-sort");
+  toggleFilterButtons.forEach((button) => {
+    button.addEventListener("click", () => openModal(".sort__list"));
+  });
+}
+
+function toggleOptions(): void {
+  const toggleOptions = document.querySelectorAll(".js-toggle-filters-options");
+  toggleOptions.forEach((option) => {
+    option.addEventListener("click", (event) => {
+      event.preventDefault();
+      const filterItems = option.parentNode.querySelector(
+        ".filter-group__items"
+      );
+      filterItems.classList.toggle("is-open");
+    });
+  });
+}
+
+function eventsDOM(): void {
+  toggleFilter();
+  toggleOptions();
+  toggleSort();
+}
+
 function main() {
   fetchDataAndRenderProducts();
   updateMiniCartCount();
+  eventsDOM();
 }
 
 document.addEventListener("DOMContentLoaded", main);
