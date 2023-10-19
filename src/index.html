@@ -27,8 +27,366 @@
       </div>
     </header>
     <main>
+      <div class="catalog__header container">
+        <h1 class="catalog__title">Blusas</h1>
+        <button class="filter__button hide--desktop js-toggle-filter">
+          Filtrar:
+        </button>
+        <div class="sort">
+          <button class="sort__title sort__button js-toggle-sort">
+            Ordenar por:
+          </button>
+          <ul class="sort__list">
+            <li class="sort__item sort__item--header hide--desktop">
+              <span class="sort__title sort__button"> Ordenar </span>
+              <button class="js-toggle-sort">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="19"
+                  height="20"
+                  viewBox="0 0 19 20"
+                  fill="none"
+                >
+                  <path d="M0.5 18.852L17.5547 1.00001" stroke="black" />
+                  <line
+                    y1="-0.5"
+                    x2="25.2899"
+                    y2="-0.5"
+                    transform="matrix(0.711746 0.702437 -0.874311 0.485367 0 1.23547)"
+                    stroke="black"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li class="sort__item">
+              <button class="sort__title sort__button">Mais recente</button>
+            </li>
+            <li class="sort__item">
+              <button class="sort__title sort__button">Maior preço</button>
+            </li>
+            <li class="sort__item">
+              <button class="sort__title sort__button">Menor preço</button>
+            </li>
+          </ul>
+        </div>
+      </div>
       <div class="catalog__main container">
         <aside class="filter__main modal--main">
+          <div class="filter__header hide--desktop">
+            <h3 class="filter__title">Filtros:</h3>
+            <button class="js-toggle-filter">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="19"
+                height="20"
+                viewBox="0 0 19 20"
+                fill="none"
+              >
+                <path d="M0.5 18.852L17.5547 1.00001" stroke="black" />
+                <line
+                  y1="-0.5"
+                  x2="25.2899"
+                  y2="-0.5"
+                  transform="matrix(0.711746 0.702437 -0.874311 0.485367 0 1.23547)"
+                  stroke="black"
+                />
+              </svg>
+            </button>
+          </div>
+          <form id="filterForm" class="filter__form">
+            <div class="filter-group filter-group--colors">
+              <h3 class="filter-group__title">CORES</h3>
+              <button class="js-toggle-filters-options hide--desktop">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="15"
+                  viewBox="0 0 20 15"
+                  fill="none"
+                >
+                  <path
+                    d="M1 1L10 14L19 1.0135"
+                    stroke="#666666"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <div class="filter-group__items">
+                <label for="amarelo" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="amarelo"
+                    name="cores"
+                    value="amarelo"
+                    class="filter-group__checkbox"
+                  />
+                  Amarelo
+                </label>
+                <label for="azul" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="azul"
+                    name="cores"
+                    value="azul"
+                    class="filter-group__checkbox"
+                  />
+                  Azul
+                </label>
+                <label for="branco" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="branco"
+                    name="cores"
+                    value="branco"
+                    class="filter-group__checkbox"
+                  />
+                  Branco
+                </label>
+                <label for="cinza" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="cinza"
+                    name="cores"
+                    value="cinza"
+                    class="filter-group__checkbox"
+                  />
+                  Cinza
+                </label>
+                <label for="laranja" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="laranja"
+                    name="cores"
+                    value="laranja"
+                    class="filter-group__checkbox"
+                  />
+                  Laranja
+                </label>
+                <label for="verde" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="verde"
+                    name="cores"
+                    value="verde"
+                    class="filter-group__checkbox"
+                  />
+                  Verde
+                </label>
+                <label for="vermelho" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="vermelho"
+                    name="cores"
+                    value="vermelho"
+                    class="filter-group__checkbox"
+                  />
+                  Vermelho
+                </label>
+                <label for="preto" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="preto"
+                    name="cores"
+                    value="preto"
+                    class="filter-group__checkbox"
+                  />
+                  Preto
+                </label>
+                <label for="rosa" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="rosa"
+                    name="cores"
+                    value="rosa"
+                    class="filter-group__checkbox"
+                  />
+                  Rosa
+                </label>
+                <label for="vinho" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="vinho"
+                    name="cores"
+                    value="vinho"
+                    class="filter-group__checkbox"
+                  />
+                  Vinho
+                </label>
+              </div>
+            </div>
+
+            <div class="filter-group filter-group--sizes">
+              <h3 class="filter-group__title">TAMANHOS</h3>
+              <button class="js-toggle-filters-options hide--desktop">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="15"
+                  viewBox="0 0 20 15"
+                  fill="none"
+                >
+                  <path
+                    d="M1 1L10 14L19 1.0135"
+                    stroke="#666666"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <div class="filter-group__items">
+                <label for="p" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="p"
+                    name="tamanhos"
+                    value="P"
+                    class="filter-group__checkbox"
+                  />
+                  P
+                </label>
+                <label for="m" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="m"
+                    name="tamanhos"
+                    value="M"
+                    class="filter-group__checkbox"
+                  />
+                  M
+                </label>
+                <label for="g" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="g"
+                    name="tamanhos"
+                    value="G"
+                    class="filter-group__checkbox"
+                  />
+                  G
+                </label>
+                <label for="gg" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="gg"
+                    name="tamanhos"
+                    value="GG"
+                    class="filter-group__checkbox"
+                  />
+                  GG
+                </label>
+                <label for="u" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="u"
+                    name="tamanhos"
+                    value="U"
+                    class="filter-group__checkbox"
+                  />
+                  U
+                </label>
+                <label for="36" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="36"
+                    name="tamanhos"
+                    value="36"
+                    class="filter-group__checkbox"
+                  />
+                  36
+                </label>
+                <label for="38" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="38"
+                    name="tamanhos"
+                    value="38"
+                    class="filter-group__checkbox"
+                  />
+                  38
+                </label>
+                <label for="40" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="40"
+                    name="tamanhos"
+                    value="40"
+                    class="filter-group__checkbox"
+                  />
+                  40
+                </label>
+              </div>
+            </div>
+
+            <div class="filter-group filter-group--price">
+              <h3 class="filter-group__title">FAIXA DE PREÇO</h3>
+              <button class="js-toggle-filters-options hide--desktop">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="15"
+                  viewBox="0 0 20 15"
+                  fill="none"
+                >
+                  <path
+                    d="M1 1L10 14L19 1.0135"
+                    stroke="#666666"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <div class="filter-group__items">
+                <label for="preco-0-50" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="preco-0-50"
+                    name="preco"
+                    value="0-50"
+                    class="filter-group__radio"
+                  />
+                  De R$0 até R$50
+                </label>
+                <label for="preco-51-150" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="preco-51-150"
+                    name="preco"
+                    value="51-150"
+                    class="filter-group__radio"
+                  />
+                  De R$51 até R$150
+                </label>
+                <label for="preco-151-300" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="preco-151-300"
+                    name="preco"
+                    value="151-300"
+                    class="filter-group__radio"
+                  />
+                  De R$151 até R$300
+                </label>
+                <label for="preco-301-500" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="preco-301-500"
+                    name="preco"
+                    value="301-500"
+                    class="filter-group__radio"
+                  />
+                  De R$301 até R$500
+                </label>
+                <label for="preco-mais-500" class="filter-group__label">
+                  <input
+                    type="checkbox"
+                    id="preco-mais-500"
+                    name="preco"
+                    value="mais-500"
+                    class="filter-group__radio"
+                  />
+                  A partir de R$500
+                </label>
+              </div>
+            </div>
+          </form>
         </aside>
         <section class="catalog__list">
           <ul class="catalog__products-list"></ul>
