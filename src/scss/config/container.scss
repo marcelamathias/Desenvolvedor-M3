@@ -1,0 +1,12 @@
+.container {
+  display: block;
+  max-width: 1366px;
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 0 auto;
+  @include desktop() {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

@@ -1,0 +1,74 @@
+.sort {
+  position: relative;
+  min-width: 120px;
+  @include desktop() {
+    border: 1px solid #666;
+    &:hover {
+      .sort__list {
+        display: block;
+      }
+    }
+  }
+  @include mobile() {
+    width: 50%;
+    border: 1px solid #666;
+    font-size: 24px;
+    color: #666;
+  }
+  &__title {
+    color: #666;
+    font-size: 22px;
+    padding: 10px;
+    display: flex;
+    white-space: nowrap;
+    width: 100%;
+    @include desktop() {
+      font-size: 16px;
+      color: #000;
+      padding: 10px;
+    }
+    @include mobile() {
+      width: 100%;
+    }
+    svg {
+      margin-left: 10px;
+    }
+  }
+  &__list {
+    @extend .modal--main; //for mobile
+    @include desktop() {
+      display: none;
+      position: absolute;
+      right: 0;
+      min-width: 120px;
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      width: 100%;
+    }
+    &:hover {
+      .sort__item {
+        display: flex;
+      }
+    }
+  }
+  &__item {
+    @include mobile() {
+      margin: 10px 0;
+    }
+    &--header {
+      position: relative;
+      border-bottom: 1px solid #666;
+      .js-toggle-sort {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+      .sort__title {
+        color: #666;
+
+        font-size: 28px;
+
+        text-transform: uppercase;
+      }
+    }
+  }
+}

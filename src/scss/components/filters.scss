@@ -1,0 +1,131 @@
+.filter {
+  &__form {
+    @include mobile() {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    .filter-group {
+      padding: 10px 0;
+      @include mobile() {
+        position: relative;
+        margin: 15px 0;
+        .js-toggle-filters-options {
+          position: absolute;
+          right: 0;
+          top: 10px;
+        }
+      }
+      &__label {
+        display: block;
+        font-size: 14px;
+      }
+      &--colors {
+        // Cores abaixo dos inputs
+        &__label {
+          display: block;
+          margin-top: 0.5rem;
+        }
+      }
+
+      &--sizes {
+        .filter-group__items {
+          @include mobile() {
+            display: none;
+            &.is-open {
+              display: grid;
+            }
+          }
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 0.5rem;
+          margin-top: 1rem;
+
+          .filter-group__label {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #c7c7c7;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            position: relative;
+            input {
+              position: absolute;
+              opacity: 0;
+              z-index: 3;
+            }
+            &:hover {
+              color: #000;
+              border-color: #00c0ee;
+            }
+          }
+        }
+      }
+
+      &--price {
+        // Layout de cores para faixa de preço
+        &__label {
+          display: block;
+          margin-top: 0.5rem;
+        }
+      }
+      &__title {
+        font-size: 24px;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        @include desktop() {
+          color: #333;
+          font-size: 16px;
+          letter-spacing: 0.8px;
+          margin-bottom: 20px;
+        }
+      }
+      &__items {
+        @include mobile() {
+          display: none;
+          padding-top: 20px;
+          &.is-open {
+            display: block;
+          }
+        }
+      }
+    }
+
+    // Botão "Aplicar Filtros"
+    &__button {
+      display: block;
+      background-color: #00c0ee;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+
+      &:hover {
+        background-color: #0094c1;
+      }
+    }
+  }
+  &__main {
+  }
+  &__button {
+    width: 50%;
+    border: 1px solid #666;
+    font-size: 24px;
+    color: #666;
+  }
+  &__header {
+    padding: 16px;
+    border-bottom: 1px solid #666;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__title {
+    color: #666;
+    font-size: 28px;
+    text-transform: uppercase;
+  }
+}

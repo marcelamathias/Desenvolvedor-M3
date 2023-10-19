@@ -1,1 +1,14 @@
-@import "reset";
+@import "./config/reset";
+@import "./config/media";
+@import "./config/global";
+@import "./config/hide";
+@import "./config/container";
+
+@import "./components/header";
+@import "./components/footer";
+@import "./components/modal";
+@import "./components/filters";
+@import "./components/sort";
+@import "./components/minicart";
+
+@import "./page/catalog";

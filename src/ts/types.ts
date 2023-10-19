@@ -8,3 +8,11 @@ export interface Product {
   size: Array<string>;
   date: string;
 }
+
+export interface ProductDetails {
+  id: string;
+  name: string;
+  price: number;
+  size: string[];
+  date: string;
+}

@@ -1,0 +1,19 @@
+.header {
+  padding: 16px 27px;
+  border-bottom: 1px solid #c7c7c7;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 3;
+  @include desktop() {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
