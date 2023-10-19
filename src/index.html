@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desenvolvedor M3</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desenvolvedor M3</title>
-  <link rel="stylesheet" href="main.css" />
-</head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__content">
+          <img src="./img/logo-m3.png" alt="m3 perfomance digital" />
+          <button class="minicart__button">
+            <img src="./img/icon-cart.png" alt="icon minicart" />
+            <span class="minicart__count">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="catalog__main container">
+        <aside class="filter__main modal--main">
+        </aside>
+        <section class="catalog__list">
+          <ul class="catalog__products-list"></ul>
+          <button class="catalog__show-more">Mostrar mais</button>
+        </section>
+      </div>
+    </main>
+    <footer class="footer">
+      <address>M3: Implantação de E-commerce VTEX</address>
+    </footer>
+  </body>
 
-<body>
-
-</body>
-<h1>Desafio m3</h1>
-
-<script src="bundle.js"></script>
-
+  <script src="bundle.js"></script>
 </html>
